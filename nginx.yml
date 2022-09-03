@@ -5,4 +5,4 @@
   connection: ssh
   tasks:
          -name: install nginx
-          action: yes name=nginx state=installed 
+          action: yum  name=nginx state=installed 
