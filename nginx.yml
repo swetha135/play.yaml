@@ -4,5 +4,5 @@
   become: yes
   connection: ssh
   tasks:
-         -name: install nginx
-          action: yum name=nginx state=installed 
+         - name: install nginx
+           action: yum name=nginx state=installed 
