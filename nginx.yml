@@ -1,0 +1,9 @@
+---
+- hosts: webserver
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+
+         -name: install nginx
+          action: yes name=nginx state=installed 
