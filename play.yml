@@ -1,6 +1,6 @@
 ---
 - name: http is there
-  hosts: webserver
+  hosts: 192.168.1.80
   tasks:
           - name: install httpd
             yum:
