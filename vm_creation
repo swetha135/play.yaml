@@ -1,0 +1,28 @@
+- name: Example of how to provision VMs (all in one data structure)
+  hosts: 192.168.1.73
+  connection: local
+  gather_facts: no
+  vars:
+    # List of VMs to provision
+    vmware_vm_provisioning_vms:
+      # Fist VM
+      - name: test01
+        hostname: vcenter.example.com
+        username: administrator@example.com
+        password: p4ssw0rd
+        validate_certs: no
+        datacenter: DC1
+        cluster: Cluster1
+        folder: /DC1/vm
+        template: CentOS-7-1525432016
+        disks:
+          - size_gb: 20
+            autoselect_datastore: yes
+        network:
+          - name: VM Network
+            ip: 192.168.1.178
+            netmask: 255.255.255.0
+            gateway: 192.168.1.1
+        hadrware:
+          num_cpus: 2
+          memory_mb: 2048
