@@ -1,8 +1,8 @@
 ---
-- hosts: webserver
-  user: ansible
-  become: yes
-  connection: ssh
+- name: http is there
+  hosts: webserver
   tasks:
           - name: install httpd
-            action: yum name=httpd state=installed
+            yum:
+              name: httpd
+              state: latest
